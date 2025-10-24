@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concert Detail</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="logo">
+            <a href="index.html"><img src="logo/Logo.png" alt="Conma?" id="logoImage"></a>
+        </div>
+        <nav class="menu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="shopping.html">Shopping</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Concert Detail -->
+    <main>
+        <section id="concert-detail" class="concert-detail-container">
+            <div class="concert-image-container">
+                <img id="concert-image" src="" alt="Concert Image">
+            </div>
+            <div class="concert-info">
+                <h1 id="concert-title">Concert Title</h1>
+                <p id="concert-description">Description will go here.</p>
+                <p><strong>Location:</strong> <span id="concert-location"></span></p>
+                <p><strong>Date:</strong> <span id="concert-date"></span></p>
+                <h3>Showtimes:</h3>
+                <div id="showtimes-list" class="showtimes-container"></div>
+                <button onclick="buyTicket()" class="buy-ticket">Buy Ticket</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="concert-detail.js"></script>
+</body>
+
+</html>
