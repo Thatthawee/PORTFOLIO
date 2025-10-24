@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="logo/Logo.png" alt="EventLogo" id="logoImage"></a>
+    </div>
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="events.html">Event</a></li>
+        <li><a href="shopping.html">Shopping</a></li>
+      </ul>
+    </nav>
+    <div class="search-profile">
+      <input type="text" placeholder="Search events..." id="searchInput">
+      <button id="searchButton">Search</button>
+      <a href="profile.html" class="profile">Profile</a>
+    </div>
+  </header>
+
+  <!-- Profile Section -->
+  <main class="profile-container">
+    <h1 id="profileUsername">MY PROFILE</h1>
+    <div class="profile-image-section">
+      <img src="profile/default-avatar.png" alt="User Avatar" id="userAvatar" class="profile-avatar">
+      <label for="uploadAvatar" class="edit-avatar-icon">📷</label>
+      <input type="file" id="uploadAvatar" accept="image/*" style="display: none;">
+    </div>
+    <form id="profileForm">
+        <label>Tel. Number</label>
+        <input type="text" id="phoneInput" placeholder="กรอกเบอร์โทรศัพท์">
+        
+        <label>First Name</label>
+        <input type="text" id="firstNameInput" placeholder="ชื่อ">
+        
+        <label>Last Name</label>
+        <input type="text" id="lastNameInput" placeholder="นามสกุล">
+        
+        <label>Email</label>
+        <input type="email" id="emailInput" placeholder="อีเมล">
+        
+        <div class="birth-date-section">
+          <label>Birth Date</label>
+          <div class="birth-date-container">
+            <select id="birthDay"></select>
+            <select id="birthMonth"></select>
+            <select id="birthYear"></select>
+          </div>
+        </div>
+        
+        
+        <label>Gender</label>
+        <select id="genderInput">
+            <option value="ชาย">Male</option>
+            <option value="หญิง">Female</option>
+        </select>
+        
+        <button type="button" id="saveButton">Save</button>
+    </form>
+</main>
+
+
+  <script src="profile.js"></script>
+  <script src="script.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

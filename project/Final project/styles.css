@@ -1,0 +1,961 @@
+/* Reset styles */
+body,
+h1,
+p,
+ul,
+li,
+a,
+input,
+button {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ใช้ Background สำหรับทุกหน้า */
+body {
+  font-family: 'Poppins';
+  line-height: 1.6;
+  color: #1a1b17;
+  background-size: cover; /* ให้รูปครอบคลุมพื้นที่ทั้งหมด */
+  background-repeat: no-repeat; /* ไม่ให้ภาพซ้ำ */
+  background-attachment: fixed; /* รูปจะคงที่ขณะเลื่อนหน้า */
+  background-position: center center; /* จัดตำแหน่งให้อยู่ตรงกลาง */
+  min-height: 100vh; /* ความสูงอย่างน้อยเต็มหน้าจอ */
+  margin: 0; /* ลบระยะห่างรอบนอก */
+  padding: 0; /* ลบระยะห่างด้านใน */
+  background-color: #1a1b17;
+  min-height: 100vh;
+  padding-top: 100px;
+}
+
+main {
+  flex-grow: 1; /* ทำให้ main ขยายไปเต็มพื้นที่ */
+}
+
+.navbar {
+  background-color: #f4b02a;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed; /* ทำให้เมนูอยู่ติดที่ด้านบน */
+  top: 0; /* กำหนดตำแหน่งให้เมนูอยู่ที่ด้านบนสุด */
+  left: 0;
+  width: 100%;
+  z-index: 1000; /* ให้เมนูอยู่บนสุด */
+}
+
+.navbar .logo a {
+  color: white;
+  font-size: 24px;
+  text-decoration: none;
+  padding-left: 2rem;
+}
+
+.navbar .menu {
+  display: flex;
+  /* ใช้ Flexbox สำหรับจัดเรียงปุ่ม */
+  justify-content: center;
+  /* จัดให้อยู่ตรงกลาง */
+  flex-grow: 1;
+  /* ให้เมนูขยายตัวเพื่อใช้พื้นที่ว่าง */
+}
+
+.navbar .menu ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  /* ระยะห่างระหว่างปุ่ม */
+  margin: 0;
+  /* เอาระยะห่างของ ul ออก */
+  padding: 0;
+  /* เอาระยะห่างของ ul ออก */
+}
+
+.navbar .menu ul li a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.navbar .menu ul li a {
+  color: #1a1b17; /* สีข้อความปกติ */
+  text-decoration: none; /* ลบขีดเส้นใต้ */
+  font-size: 20px; /* เพิ่มขนาดตัวอักษรให้ใหญ่ขึ้น */
+  padding: 10px 20px; /* เพิ่ม padding เพื่อให้ปุ่มใหญ่ขึ้น */
+  transition: color 0.3s ease; /* เพิ่มเอฟเฟกต์เปลี่ยนสีอย่างนุ่มนวล */
+}
+
+/* เปลี่ยนสีเมื่อ hover */
+.navbar .menu ul li a:hover {
+  color: hsl(38, 38%, 86%); /* เปลี่ยนสีข้อความเมื่อ hover */
+  text-decoration: none; /* คงไม่มีขีดเส้นใต้แม้ใน hover */
+}
+
+.logo a {
+  color: #fff;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.menu ul {
+  display: flex;
+  list-style: none;
+}
+
+.menu ul li {
+  margin: 0 10px;
+}
+
+.menu ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.menu ul li a:hover {
+  text-decoration: underline;
+}
+
+.search-profile {
+  display: flex;
+  align-items: center;
+}
+
+#searchInput {
+  padding: 5px;
+  font-size: 1rem;
+  margin-right: 10px;
+  border: none;
+  border-radius: 5px;
+}
+
+#searchButton {
+  padding: 5px 15px;
+  font-size: 1rem;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  margin: 13px;
+  cursor: pointer;
+}
+
+#searchButton:hover {
+  background-color: #45a049;
+}
+
+.profile {
+  padding-left: 0.2rem;
+  padding-right: 1.6rem;
+  margin: 1.2rem;
+  font-size: 20px;
+  color: #1a1b17;
+  text-decoration: none;
+}
+
+.profile:hover {
+  text-decoration: none;
+  color: hsl(38, 38%, 86%);
+  transition: color 0.3s ease;
+}
+
+.content {
+  padding: 20px;
+  text-align: center;
+  color: white;
+}
+
+h1 {
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.2rem;
+}
+
+.hidden {
+  display: none;
+}
+
+.auth-container {
+  max-width: 400px;
+  margin: 50px auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.auth-container h2 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.auth-container input {
+  display: block;
+  width: 100%;
+  margin: 10px 0;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.auth-container button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.auth-container button:hover {
+  background: #45a049;
+}
+
+.auth-container p {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* #profileInfo p {
+  margin: 10px 0;
+} */
+
+button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #45a049;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+form input {
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* #logoutButton {
+  background-color: #f44336;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+#logoutButton:hover {
+  background-color: #d32f2f;
+} */
+
+.hidden {
+  display: none;
+}
+
+
+
+#logoImage {
+  width: 120px;
+  /* ปรับขนาดของโลโก้ให้เล็กลง */
+  height: auto;
+  /* คงอัตราส่วนของโลโก้ */
+}
+
+body.login-register {
+  background-color: hwb(218 36% 22%);
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  flex-direction: column;
+  /* จัดเรียงให้อยู่ในแนวตั้ง */
+}
+
+.form-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-logo {
+  width: 250px;
+  /* ปรับขนาดโลโก้ */
+  height: auto;
+}
+
+/* สไตล์สำหรับหัวข้อ Login */
+h2 {
+  margin-bottom: 20px;
+}
+
+/* ฟอร์มการกรอกข้อมูล */
+form input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+form button {
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  /* ปุ่ม Login */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+p {
+  margin-top: 20px;
+}
+
+a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#logoImage {
+  width: 150px;
+  /* กำหนดความกว้างของโลโก้ */
+  padding-top: 0.6rem;
+}
+
+/* Slider container */
+.image-slider {
+  position: relative;
+  width: 100%;
+  max-width: 1100px;
+  /* กำหนดความกว้าง */
+  height: 375px;
+  /* กำหนดความสูง */
+  margin: auto;
+  overflow: hidden;
+  border-radius: 20px;
+  /* ทำมุมโค้งมน */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* เพิ่มเงา (ไม่บังคับ) */
+  background-color: #f9f9f9;
+  /* สีพื้นหลัง (ถ้าไม่มีภาพใน slider) */
+}
+
+/* การแสดงภาพใน slider */
+.slider-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.slider-images {
+  display: flex;
+  transition: transform 0.5s ease;
+  height: 100%;
+  /* ทำให้ครอบคลุมขนาดของ image-slider */
+}
+
+.slider-images img {
+  width: 100%;
+  /* ปรับขนาดภาพให้พอดีกับ container */
+  height: 100%;
+  /* ปรับขนาดให้เต็ม */
+  object-fit: cover;
+  /* ครอบภาพให้พอดีใน container โดยรักษาอัตราส่วน */
+  border-radius: 20px;
+  /* ทำมุมโค้งมนให้รูปภาพ */
+}
+
+/* ปุ่มถัดไปและย้อนกลับ */
+/* ปุ่มถัดไปและย้อนกลับ */
+/* ปุ่มถัดไปและย้อนกลับ */
+.prev,
+.next {
+  position: absolute;
+  top: 50%;
+  padding: 20px 30px; /* เพิ่มขนาดปุ่ม */
+  background-color: rgba(0, 0, 0, 0.5); /* สีพื้นหลังโปร่งแสง */
+  color: white;
+  border: none; /* เอากรอบออก */
+  border-radius: 5px; /* มุมเล็กน้อย (ถ้าไม่ต้องการให้โค้งให้ปรับเป็น 0px) */
+  cursor: pointer;
+  font-size: 24px; /* เพิ่มขนาดข้อความในปุ่ม */
+  z-index: 100;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 10px; /* ปรับตำแหน่งให้ห่างจากขอบ */
+}
+
+.next {
+  right: 10px; /* ปรับตำแหน่งให้ห่างจากขอบ */
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8); /* สีพื้นหลังเข้มขึ้นเมื่อ hover */
+}
+
+/* จุดไข่ปลา */
+.dots-container {
+  position: absolute;
+  bottom: 10px;
+  /* ตั้งจุดไข่ปลาให้อยู่ขอบล่าง */
+  left: 50%;
+  transform: translateX(-50%);
+  /* ทำให้จุดไข่ปลากลาง */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.dot {
+  height: 8px;
+  width: 8px;
+  margin: 0 4px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+  cursor: pointer;
+}
+
+.dot:hover {
+  background-color: #717171;
+}
+
+.active {
+  background-color: #717171;
+}
+
+.event {
+  display: flex;
+  flex-direction: column; /* จัดเรียงเนื้อหาในแนวตั้ง */
+  align-items: center; /* จัดให้อยู่กึ่งกลางแนวนอน */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  padding: 10px;
+  background-color: hsl(38, 47%, 85%); /* สีพื้นหลังของกรอบ (ปรับได้) */
+  border-radius: 10px; /* ทำมุมโค้ง */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงา */
+  max-width: 300px; /* กำหนดความกว้างสูงสุดของกรอบ */
+  margin: 10px auto; /* เพิ่มระยะห่างระหว่างกรอบ */
+}
+
+.event-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1rem; /* ลดระยะห่างระหว่างการ์ด */
+  margin: 10%;
+  margin-top: 30px;
+}
+
+.event-card {
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 350px; /* ขยายขนาดของ event card */
+  height: 400px; /* ขยายความสูงของ event card */
+  margin: 1rem; /* ตั้งระยะห่างระหว่างการ์ดเป็น 1rem */
+  margin-bottom: 2rem;
+}
+
+.event-card:hover {
+  transform: scale(1.05);
+}
+
+.event img {
+  width: 100%; /* ให้ภาพเต็มความกว้างของ container */
+  height: 350px; /* ความสูงคงที่ */
+  object-fit: cover; /* ทำให้ภาพคงสัดส่วน */
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.event-content {
+  padding: 20px;
+}
+
+.event p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.event h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.event-title {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event-date {
+  font-size: 1rem;
+  color: #777;
+  margin-bottom: 15px;
+}
+
+.event-description {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.buy-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #45a049;
+}
+
+/* Style for the Buy Ticket button */
+.buy-ticket {
+  display: inline-block;
+  padding: 10px 20px; /* ขนาดของปุ่ม */
+  font-size: 14px; /* ขนาดตัวอักษร */
+  color: #ffffff; /* สีข้อความ */
+  background-color: #772e25; /* สีพื้นหลังของปุ่ม */
+  border: none;
+  border-radius: 5px;
+  text-decoration: none; /* ลบเส้นใต้ */
+  text-align: center;
+  margin-top: auto; /* ดันปุ่มไปด้านล่างสุดของกรอบ */
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-ticket:hover {
+  background-color: #772e25; /* สีเมื่อ Hover */
+  transform: scale(1.05); /* ขยายปุ่มเล็กน้อยเมื่อชี้เมาส์ */
+  text-decoration: none;
+}
+
+.buy-ticket:active {
+  transform: scale(1); /* ย่อกลับเมื่อคลิก */
+}
+
+/* Container สำหรับรายละเอียดของอีเว้นท์ */
+.event-details-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1200px;
+  gap: 20px;
+  align-items: center; /* จัดให้องค์ประกอบอยู่ตรงกลางแนวตั้ง */
+}
+
+/* รูปภาพของอีเว้นท์ */
+.event-image {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.event-image img {
+  width: 100%;
+  max-width: 200px; /* กำหนดขนาดเล็กลง */
+  border-radius: 10px; /* ทำให้ขอบโค้งมน */
+  object-fit: cover; /* ครอบภาพให้พอดีในกรอบ */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้รูป */
+}
+
+/* ข้อมูลของอีเว้นท์ */
+.event-info {
+  flex: 2;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.event-info h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.event-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: #555;
+  margin: 5px 0;
+}
+
+/* ปุ่ม Buy Now */
+#buyNowButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 15px;
+}
+
+#buyNowButton:hover {
+  background-color: #45a049;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .event-details-container {
+    flex-direction: column; /* จัดให้องค์ประกอบซ้อนกันในหน้าจอเล็ก */
+    text-align: center;
+  }
+
+  .event-info {
+    align-items: center; /* จัดข้อความให้อยู่ตรงกลาง */
+  }
+
+  .event-image img {
+    max-width: 200px; /* ปรับขนาดรูปในหน้าจอเล็ก */
+  }
+}
+
+/* Fixed Bottom Footer */
+footer {
+  background-color: #f4b02a;
+  color: #1a1b17;
+  text-align: center;
+  padding: 15px 0;  /* ปรับให้พอดี -- เพิ่ม padding สำหรับความสูงที่เหมาะสม */
+  position: fixed bottom;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ footer */
+}
+
+/* ปรับขนาดให้ footer ไม่ใหญ่เกินไป */
+.footer-container {
+  max-width: 1200px;  /* กำหนดความกว้างสูงสุด */
+  margin: 0 auto;  /* จัดให้ footer อยู่กลาง */
+  padding: 0 20px;  /* เพิ่ม padding ด้านข้างให้สวยงาม */
+}
+
+/* ปรับขนาดข้อความใน footer */
+footer p {
+  font-size: 14px; /* ขนาดข้อความที่เหมาะสม */
+  margin: 0;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0;
+}
+
+footer ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+footer ul li a {
+  color: #1a1b17;
+  text-decoration: none;
+  font-size: 14px; /* ขนาดตัวอักษรในลิงค์ */
+}
+
+footer ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Concert Detail */
+.concert-detail-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  gap: 40px;
+  background: linear-gradient(to bottom, #ffffff, #e6e6e6);
+  margin: 20px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.concert-image-container img {
+  width: 300px;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.concert-info {
+  flex: 1;
+  max-width: 500px;
+}
+
+.concert-info h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.concert-info p {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #000; /* เปลี่ยนสีของ Location และ Date เป็นดำ */
+}
+
+.showtimes-container {
+  display: flex; /* จัดเรียงเวลาการแสดงในแนวนอน */
+  gap: 10px; /* เพิ่มช่องว่างระหว่างเวลา */
+}
+
+.showtime-item {
+  padding: 5px 10px; /* เพิ่มระยะห่างด้านใน */
+  background-color: red; /* กรอบสีแดง */
+  color: white; /* ข้อความสีขาว */
+  border-radius: 5px; /* มุมโค้ง */
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.buy-ticket {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+}
+
+.buy-ticket:hover {
+  background-color: #45a049;
+}
+
+/* shopping style */
+
+.shopping-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 20px;
+}
+
+.shopping-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: auto;
+}
+
+.shopping-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.shopping-item h3 {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.shopping-item p {
+  font-size: 14px;
+  margin: 5px 0;
+}
+
+.buy-button {
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+  background-color: #45a049;
+}
+
+.shopping-item .price {
+  display: inline-block; /* ทำให้กรอบปรับขนาดตามข้อความ */
+  padding: 5px 5px; /* เพิ่มพื้นที่ในกรอบ */
+  background-color: #d32f2f; /* กรอบสีแดง */
+  color: white; /* ข้อความสีขาว */
+  font-weight: bold; /* ตัวหนา */
+  border-radius: 5px; /* มุมโค้งของกรอบ */
+  font-size: 1.2rem; /* เพิ่มขนาดตัวอักษร */
+  margin: 10px 0; /* เพิ่มระยะห่างจากองค์ประกอบด้านบนและล่าง */
+  text-align: center; /* จัดข้อความให้อยู่ตรงกลาง */
+}
+
+/* profile */
+
+/* Profile Container */
+/* Container สำหรับโปรไฟล์ */
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; /* ให้ครอบคลุมเต็มหน้าจอ */
+  padding: 20px;
+  margin: auto;
+}
+
+
+.profile-container h1 {
+  font-size: 24px;
+  color: #fff;
+}
+
+.profile-image-section {
+  position: relative;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.profile-image-section img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.edit-avatar-icon {
+  position: absolute;
+  right: 5px; /* ตำแหน่งปุ่ม 📷 ด้านขวา */
+  bottom: 5px; /* ตำแหน่งปุ่ม 📷 ด้านล่าง */
+  background-color: #f4b02a; /* สีพื้นหลังของปุ่ม */
+  color: #fff;
+  border-radius: 50%; /* ทำให้ปุ่มกลม */
+  width: 30px; /* ขนาดความกว้างของปุ่ม */
+  height: 30px; /* ขนาดความสูงของปุ่ม */
+  display: flex;
+  justify-content: center; /* จัดข้อความให้อยู่กลาง */
+  align-items: center; /* จัดข้อความให้อยู่กลาง */
+  font-size: 16px; /* ขนาดตัวอักษรของ 📷 */
+  cursor: pointer; /* เปลี่ยนเป็น pointer เมื่อ hover */
+  transition: all 0.3s ease; /* เพิ่มเอฟเฟกต์ */
+}
+
+.edit-avatar-icon:hover {
+  background-color: #e89b1d; /* สีปุ่มเมื่อ hover */
+}
+.red-text {
+  color: red;
+  font-size: 12px;
+}
+
+/* Profile Form */
+#profileForm {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#profileForm label {
+  text-align: left;
+  font-size: 14px;
+  color: #fff;
+}
+
+#profileForm input,
+#profileForm select {
+  width: 100%;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+  border-radius: 5px;
+  background-color: #2e2e2e;
+  color: #fff;
+}
+
+.save-button {
+  background-color: red;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #d43c3c;
+}
+
+.username-display {
+  font-size: 1.2rem;
+  color: white; /* หรือสีที่ต้องการ */
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.birth-date-container {
+  display: flex;
+  gap: 10px; /* ระยะห่างระหว่าง select */
+}
+
+.birth-date-container select {
+  flex: 1; /* ให้ select มีขนาดเท่ากัน */
+}
